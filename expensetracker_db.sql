@@ -3,8 +3,10 @@ drop user expensetracker;
 create user expensetracker with password 'password';
 create database expensetrackerdb with template=template0 owner=expensetracker;
 \connect expensetrackerdb;
-alter deafult privileges grant all on tables to expensetracker;
-alter deafult privileges grant all on sequences to expensetracker;
+grant all privileges on all tables in schema public to expensetracker;
+grant all privileges on all sequences in schema public to expensetracker;
+alter default privileges grant all on tables to expensetracker;
+alter default privileges grant all on sequences to expensetracker;
 
 create table et_users(
 user_id integer primary key not null,
