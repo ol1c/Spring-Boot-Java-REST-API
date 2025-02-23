@@ -1,4 +1,4 @@
-package com.pairlearning.expensetracker.respositories;
+package com.pairlearning.expensetracker.repositories;
 
 import com.pairlearning.expensetracker.domain.User;
 import com.pairlearning.expensetracker.exceptions.EtAuthException;
@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 @Repository
-public class UserRespositoryImpl implements UserRespository {
+public class UserRepositoryImpl implements UserRepository {
 
     private static final String SQL_CREATE = "INSERT INTO ET_USERS(USER_ID, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) VALUES(NEXTVAL('ET_USERS_SEQ'), ?, ?, ?, ?)";
     private static final String SQL_COUNT_BY_EMAIL = "SELECT COUNT(*) FROM ET_USERS WHERE EMAIL = ?";
