@@ -26,7 +26,7 @@ public class CategoryResource {
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
-    @GetMapping("/{categoryId}")
+    @GetMapping("{categoryId}")
     public ResponseEntity<Category> getCategoryById(HttpServletRequest request, @PathVariable("categoryId") Integer categoryId){
         int userId = (Integer) request.getAttribute("userId");
         Category category = categoryService.fetchCategoryById(userId, categoryId);
@@ -42,12 +42,12 @@ public class CategoryResource {
         return  new ResponseEntity<>(category, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{categoryId}")
+    @PutMapping("{categoryId}")
     public ResponseEntity<Map<String, Boolean>> updateCategory(HttpServletRequest request, @PathVariable("categoryId") Integer categoryId, @RequestBody Category category){
         int userId = (Integer) request.getAttribute("userId");
         categoryService.updateCategory(userId, categoryId, category);
         Map<String, Boolean> map = new HashMap<>();
-        map.put("succes", true);
+        map.put("success", true);
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 }
