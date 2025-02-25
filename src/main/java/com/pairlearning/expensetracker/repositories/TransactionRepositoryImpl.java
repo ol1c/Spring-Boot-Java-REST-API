@@ -25,6 +25,7 @@ public class TransactionRepositoryImpl implements  TransactionRepository{
             "VALUES(NEXTVAL('ET_TRANSACTIONS_SEQ'), ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE ET_TRANSACTIONS SET AMOUNT = ?, NOTE = ?, TRANSACTION_DATE = ?" +
             " WHERE USER_ID = ? AND CATEGORY_ID = ? AND TRANSACTION_ID = ?";
+    private static final String SQL_DELETE = "DELETE FROM ET_TRANSACTIONS WHERE USER_ID = ? AND CATEGORY_ID = ? AND TRANSACTION_ID = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -73,7 +74,9 @@ public class TransactionRepositoryImpl implements  TransactionRepository{
 
     @Override
     public void removeById(Integer userId, Integer categoryId, Integer transactionId) throws EtResourceNotFoundException {
-
+        int count = jdbcTemplate.update(SQL_DELETE, new Object[]{userId, categoryId, transactionId});
+        if (count == 0)
+            throw new EtResourceNotFoundException("Transactions not found");
     }
 
     private RowMapper<Transaction> transactionRowMapper = ((rs, rowNum) -> {
