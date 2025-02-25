@@ -1,12 +1,12 @@
-
 # Spring Boot Java REST API
 
 > A simple Spring Boot application that provides a RESTful API to manage data operations (CRUD) for a given resource (items).
 
 ## 📜 Project Overview
 
-This project demonstrates the basics of creating a RESTful API using Spring Boot. It provides endpoints to perform CRUD (Create, Read, Update, Delete) operations on an item resource. The app uses PostgreSQL as the relational database and JdbcTemplate and is built with the goal of learning how to structure and implement a simple API.
+This project is a learning-focused implementation of a RESTful API using Spring Boot. It provides endpoints to perform CRUD (Create, Read, Update, Delete) operations on an item resource. The application uses PostgreSQL as the relational database and JdbcTemplate for database interactions.
 
+This project is based on the [freeCodeCamp tutorial](https://www.freecodecamp.org/news/use-spring-boot-and-java-to-create-a-rest-api-tutorial/) and serves as a practical exercise in structuring and implementing a simple API.
 ## ⚙️ Technologies Used
 
 - **Spring Boot** - A framework for building Java-based web applications.
@@ -37,9 +37,9 @@ cd Spring-Boot-Java-REST-API
 
 2. **Set up the PostgreSQL database**:
 
-    - Make sure PostgreSQL is running on your machine.
-    - Create a new database, e.g., `expensetrackerdb`.
-    - Update the database credentials in `src/main/resources/application.properties` as follows:
+   - Make sure PostgreSQL is running on your machine.
+   - Create a new database, e.g., `expensetrackerdb`.
+   - Update the database credentials in `src/main/resources/application.properties` as follows:
 
    ```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/expensetrackerdb
@@ -67,7 +67,7 @@ You can use [Postman](https://www.postman.com/) to test the API endpoints. The f
 
 ## 🚀 API Endpoints
 
-The application exposes the following API endpoints for managing the **items** resource:
+The application provides API endpoints to **track expenses**. For example the ability to manage **categories** resources:
 
 ### 1. **GET /api/categories**
 
@@ -77,20 +77,20 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 [
-    {
-        "categoryId": 1,
-        "userId": 1,
-        "title": "Shopping",
-        "description": "shopping expenses",
-        "totalExpense": 500.0
-    },
-    {
-        "categoryId": 2,
-        "userId": 1,
-        "title": "Subscriptions",
-        "description": "all subscriptions expenses",
-        "totalExpense": 30.0
-    }
+  {
+    "categoryId": 1,
+    "userId": 1,
+    "title": "Shopping",
+    "description": "shopping expenses",
+    "totalExpense": 500.0
+  },
+  {
+    "categoryId": 2,
+    "userId": 1,
+    "title": "Subscriptions",
+    "description": "all subscriptions expenses",
+    "totalExpense": 30.0
+  }
 ]
 ```
 
@@ -102,11 +102,11 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 {
-    "categoryId": 1,
-    "userId": 1,
-    "title": "Shopping",
-    "description": "shopping expenses",
-    "totalExpense": 500.0
+  "categoryId": 1,
+  "userId": 1,
+  "title": "Shopping",
+  "description": "shopping expenses",
+  "totalExpense": 500.0
 }
 ```
 
@@ -117,8 +117,8 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 {
-    "title": "Shopping",
-    "description": "shopping expenses"
+  "title": "Shopping",
+  "description": "shopping expenses"
 }
 ```
 
@@ -126,11 +126,11 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 {
-    "categoryId": 1,
-    "userId": 1,
-    "title": "Shopping",
-    "description": "shopping expenses",
-    "totalExpense": 0.0
+  "categoryId": 1,
+  "userId": 1,
+  "title": "Shopping",
+  "description": "shopping expenses",
+  "totalExpense": 0.0
 }
 ```
 
@@ -141,8 +141,8 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 {
-    "title": "Shopping",
-    "description": "updated description"
+  "title": "Shopping",
+  "description": "updated description"
 }
 ```
 
@@ -150,11 +150,11 @@ The application exposes the following API endpoints for managing the **items** r
 
 ```json
 {
-    "categoryId": 1,
-    "userId": 1,
-    "title": "Shopping",
-    "description": "updated description",
-    "totalExpense": 0.0
+  "categoryId": 1,
+  "userId": 1,
+  "title": "Shopping",
+  "description": "updated description",
+  "totalExpense": 0.0
 }
 ```
 
