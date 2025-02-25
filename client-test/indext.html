@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cilent page</title>
+</head>
+<body>
+    <h2>Expense tracker</h2>
+
+    <script>
+        fetch('http://localhost:8080/api/categories', {
+            headers: { 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0OTAwNTksImV4cCI6MTc0MDQ5NzI1OSwidXNlcklkIjoyLCJlbWFpbCI6ImRhdmlkQG1haWwuY29tIiwiZmlyc3ROYW1lIjoiRGF2aWQiLCJsYXN0TmFtZSI6IlNtaXRoIn0.rhMKvjmix5nIr1KRsYNNm5lUvxQa8X-DKgGeup29wP4' }
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.error(err));
+    </script>
+</body>
+</html>
