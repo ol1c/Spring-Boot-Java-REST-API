@@ -1,6 +1,6 @@
 # Spring Boot Java REST API
 
-> A simple Spring Boot application that provides a RESTful API to manage data operations (CRUD) for a given resource (items).
+> A simple Spring Boot application that provides a RESTful API to manage data operations (CRUD) for a given resource.
 
 ## 📜 Project Overview
 
