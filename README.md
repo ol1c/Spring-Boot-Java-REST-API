@@ -4,7 +4,7 @@
 
 ## 📜 Project Overview
 
-This project is a learning-focused implementation of a RESTful API using Spring Boot. It provides endpoints to perform CRUD (Create, Read, Update, Delete) operations on an item resource. The application uses PostgreSQL as the relational database and JdbcTemplate for database interactions.
+This project is a learning-focused implementation of a RESTful API using Spring Boot. It provides endpoints to perform CRUD (Create, Read, Update, Delete) operations on user, category, and transaction resources. The application uses PostgreSQL as the relational database and JdbcTemplate for database interactions.
 
 This project is based on the [freeCodeCamp tutorial](https://www.freecodecamp.org/news/use-spring-boot-and-java-to-create-a-rest-api-tutorial/) and serves as a practical exercise in structuring and implementing a simple API.
 ## ⚙️ Technologies Used
